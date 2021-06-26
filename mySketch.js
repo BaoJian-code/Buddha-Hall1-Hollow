@@ -1,6 +1,5 @@
 let num = 100;
 let angle = 0;
-
 let boxes = [];
 let img, bell;
 
@@ -10,14 +9,18 @@ function preload() {
 }
 
 function setup() {
-	bell.loop();
+	//start website sound
+	getAudioContext().suspend();
+	userStartAudio();
+	//
+	
 	frameRate(30);
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight);
 	noFill();
 	colorMode(HSB, 255);
 	background(0);
-		// timer
+	// timer
 	let counter = 0;
 	let min = 0;
 	noStroke();
@@ -42,12 +45,8 @@ function setup() {
 	setInterval(timeIt, 1000);
 	//
 
-
-
 	for (let i = 0; i < num; i++) {
-
 		boxes[i] = new Box(width / 2 - 200, height / 2 - 200, i * (255 / num), i);
-
 	}
 }
 
@@ -59,6 +58,9 @@ function draw() {
 	rect(width / 2, height / 2, 400, 400);
 	let r = frameCount % 255 + 300;
 	let r2 = (frameCount % 255 + 150) * 2;
+	if (r == 301) {
+		bell.play();
+	}
 
 	for (let i = 0; i < 100; i++) {
 		let alpha = 255 * (i / 100);
