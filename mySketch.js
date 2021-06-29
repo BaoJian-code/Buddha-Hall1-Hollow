@@ -26,7 +26,7 @@ function setup() {
 	noStroke();
 	fill(255);
 	textSize(20);
-	text('Press mouse to play BGM', 10, height - 60);
+	//text('Press mouse to play BGM', 10, height - 60);
 	text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 20);
 
 	function timeIt() {
