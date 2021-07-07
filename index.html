@@ -22,30 +22,24 @@ body {
 	text-align: center;
 }
 
-h1 {
-	color: white;
-	margin: auto;
+a::before {
+	content: url('false.png');
+}
+
+
+a {
+	color: red;
+	font-family: "Times New Roman", serif;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0px 10px;
+	text-decoration: none;
 }
 
 a:hover {
         color: white;
 }
-a[href^="https"]::before {
-	content: url('false.png');
-}
-
-
-a[href^="https"] {
-	color: red;
-	font-family: "Times New Roman", serif;
-	font-size: 18px;
-	font-weight: normal;
-	margin:0px 10px;
-	text-decoration:none;
-}
-#true::before{
-	content: url('true.png');
-}
+	    
 #main::before{
 	content: none;
 }
